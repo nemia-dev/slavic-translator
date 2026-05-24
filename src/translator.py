@@ -1,6 +1,6 @@
-from mtranslate import translate
-
+# 3rd-Party
 from helpers import has_cyrillic
+from mtranslate import translate
 from transliteration import transliterate
 
 
@@ -15,7 +15,7 @@ def translate_word(word: str, languages: dict, show_original=False):
                 latin = transliterate(translation)
 
                 if show_original:
-                    formatted = f"{latin} [{translation}]"
+                    formatted = f'{latin} [{translation}]'
                 else:
                     formatted = latin
             else:
@@ -24,6 +24,6 @@ def translate_word(word: str, languages: dict, show_original=False):
             results.append((language_name, formatted))
 
         except Exception as e:
-            results.append((language_name, f"ERROR: {e}"))
+            results.append((language_name, f'ERROR: {e}'))
 
     return results
