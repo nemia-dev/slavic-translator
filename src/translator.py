@@ -7,7 +7,7 @@ from transliteration import transliterate
 def translate_word(word: str, languages: dict, show_original=False):
     results = []
 
-    for language_name, code in languages.items():
+    for code, language_name in languages.items():
         try:
             translation = translate(word, code)
 

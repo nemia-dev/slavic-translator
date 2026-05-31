@@ -1,16 +1,16 @@
 LANGUAGES = {
-    'Polish': 'pl',
-    'Czech': 'cs',
-    'Slovak': 'sk',
-    'Slovenian': 'sl',
-    'Croatian': 'hr',
-    'Bosnian': 'bs',
-    'Serbian': 'sr',
-    'Bulgarian': 'bg',
-    'Macedonian': 'mk',
-    'Ukrainian': 'uk',
-    'Belarusian': 'be',
-    'Russian': 'ru',
+    'pl': 'Polish',
+    'cs': 'Czech',
+    'sk': 'Slovak',
+    'sl': 'Slovenian',
+    'hr': 'Croatian',
+    'bs': 'Bosnian',
+    'sr': 'Serbian',
+    'bg': 'Bulgarian',
+    'mk': 'Macedonian',
+    'uk': 'Ukrainian',
+    'be': 'Belarusian',
+    'ru': 'Russian',
 }
 
 GROUPS = {

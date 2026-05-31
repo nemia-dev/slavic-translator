@@ -1,40 +1,23 @@
-# Standard Library
-import argparse
-
 # 3rd-Party
-from languages import GROUPS
 from languages import LANGUAGES
 from translator import translate_word
 
-
-def filter_languages(group=None):
-    if not group:
-        return LANGUAGES
-
-    allowed_codes = GROUPS[group]
-
-    return {lang: code for lang, code in LANGUAGES.items() if code in allowed_codes}
+# Project
+from src.cli import parse_args
+from src.helpers import filter_languages
 
 
 def main():
-    parser = argparse.ArgumentParser()
 
-    parser.add_argument('word', help='Word to translate')
-    parser.add_argument(
-        '--group',
-        choices=['east', 'west', 'south'],
-        help='Language group',
-    )
+    args = parse_args()
 
-    parser.add_argument(
-        '--show-original',
-        action='store_true',
-        help='Show original Cyrillic text',
-    )
+    languages = LANGUAGES
 
-    args = parser.parse_args()
+    if args.target:
+        languages = {code: LANGUAGES[code] for code in args.target}
 
-    languages = filter_languages(args.group)
+    if args.group:
+        languages = filter_languages(args.group)
 
     results = translate_word(
         args.word,
@@ -43,10 +26,8 @@ def main():
     )
 
     print()
-
     for language, translation in results:
         print(f'{language:>12} : {translation}')
-
     print()
 
 
