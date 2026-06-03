@@ -47,6 +47,12 @@ Show original Cyrillic text:
 python main.py słowo --show-original
 ```
 
+You can also run it as a module:
+
+```bash
+python -m src słowo
+```
+
 ## Example output
 
 ```text

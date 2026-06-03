@@ -6,8 +6,8 @@ from typing import Literal
 from pydantic import BaseModel
 from pydantic import field_validator
 
-# Project
-from src.languages import LANGUAGES
+# Local
+from .languages import LANGUAGES
 
 
 class Args(BaseModel):

@@ -1,7 +1,9 @@
 # 3rd-Party
-from helpers import has_cyrillic
 from mtranslate import translate
-from transliteration import transliterate
+
+# Local
+from .helpers import has_cyrillic
+from .transliteration import transliterate
 
 
 def translate_word(word: str, languages: dict, show_original=False):

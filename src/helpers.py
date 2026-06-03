@@ -1,9 +1,9 @@
 # Standard Library
 import re
 
-# Project
-from src.languages import GROUPS
-from src.languages import LANGUAGES
+# Local
+from .languages import GROUPS
+from .languages import LANGUAGES
 
 
 def has_cyrillic(text: str) -> bool:

@@ -1,10 +1,23 @@
-# 3rd-Party
-from languages import LANGUAGES
-from translator import translate_word
+if __package__ in (None, ''):
+    # Standard Library
+    import sys
+    from pathlib import Path
 
-# Project
-from src.cli import parse_args
-from src.helpers import filter_languages
+    project_root = Path(__file__).resolve().parent.parent
+    if str(project_root) not in sys.path:
+        sys.path.insert(0, str(project_root))
+
+    # Project
+    from src.cli import parse_args
+    from src.helpers import filter_languages
+    from src.languages import LANGUAGES
+    from src.translator import translate_word
+else:
+    # Local
+    from .cli import parse_args
+    from .helpers import filter_languages
+    from .languages import LANGUAGES
+    from .translator import translate_word
 
 
 def main():
